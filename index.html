@@ -57,13 +57,12 @@
         strong {
             color: #d90429; /* 중요한 단어 강조 색상 */
         }
-        /* Google 번역 위젯이 화면 중앙에 오도록 스타일 추가 */
+        /* Google 번역 위젯 스타일 */
         #google_translate_element {
             padding: 10px 0; 
             text-align: center; 
             margin-bottom: 20px;
         }
-        /* 위젯 자체의 디자인을 모바일 화면에 맞게 조정 (선택 사항) */
         .goog-te-gadget {
             font-size: 14px;
         }
@@ -79,10 +78,10 @@
             function googleTranslateElementInit() {
                 new google.translate.TranslateElement({
                     pageLanguage: 'ko', // 원본 페이지 언어는 한국어
-                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE, // 간단한 드롭다운 형태
+                    // ★ 핵심 수정: 레이아웃을 VERTICAL로 변경하여 스크롤 활성화 ★
+                    layout: google.translate.TranslateElement.InlineLayout.VERTICAL, 
                     autoDisplay: true,
-                    // ★ 핵심 수정: multilanguage 옵션을 true로 설정 ★
-                    multilanguage: true 
+                    multilanguage: true // 언어명을 해당 언어로 표시
                 }, 'google_translate_element');
             }
         </script>
